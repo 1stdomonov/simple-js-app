@@ -1,8 +1,9 @@
-//pop-up message prints to index page when it first loads
-alert("Hello World");
+//declare a variable and assign it to a blank array
+let pokemonList = [];
 
-//declare variable favoriteFood and assign value of choice
-let favoriteFood = "Pizza!";
-
-//text/item prints to index page
-document.write(favoriteFood);
+//add several pokemon objects to the array
+pokemonList = [
+    {name: 'Bulbasaur', height: 2.2, type: ['grass', 'poison']},
+    {name: 'Ivysaur', height: 3.3, type: ['grass', 'poison']},
+    {name: 'Venusaur ', height: 6.7, type: ['grass', 'poison']}
+];
