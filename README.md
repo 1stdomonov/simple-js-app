@@ -1,2 +1,8 @@
 # simple-js-app
-project in dev
+Pokedex Project in dev
+
+using: 
+
+visual code studio
+pokedex.org
+github desktot/github
