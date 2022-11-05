@@ -7,3 +7,12 @@ pokemonList = [
     {name: 'Ivysaur', height: 3.3, type: ['grass', 'poison']},
     {name: 'Venusaur ', height: 6.7, type: ['grass', 'poison']}
 ];
+
+//create a for loop to iterate over objects in pokemonList
+for (let i = 0; i < pokemonList.length; i++) {
+    document.write(pokemonList[i].name + ', height:' + pokemonList[i].height);
+    //add a conditonial to highlight extra tall pokemon
+    if (pokemonList[i].height >= 5) {
+        document.write(' - whoa there!');
+    }
+}
