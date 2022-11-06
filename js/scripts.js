@@ -9,10 +9,11 @@ pokemonList = [
 ];
 
 //create a for loop to iterate over objects in pokemonList
+//include conditional to add emphasis on tall pokemon
 for (let i = 0; i < pokemonList.length; i++) {
-    document.write(pokemonList[i].name + ', height:' + pokemonList[i].height);
-    //add a conditonial to highlight extra tall pokemon
-    if (pokemonList[i].height >= 5) {
-        document.write(' - whoa there!');
+    if (pokemonList[i].height >= 4) {
+        document.write('<p>' + pokemonList[i].name + ', height:' + pokemonList[i].height + ' - whoa there!' + '</p>');
+    } else { 
+        document.write('<p>' + pokemonList[i].name + ', height:' + pokemonList[i].height + '</p>');
     }
 }
