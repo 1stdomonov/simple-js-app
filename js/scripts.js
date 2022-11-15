@@ -1,19 +1,16 @@
-//declare a variable and assign it to a blank array
-let pokemonList = [];
-
-//add several pokemon objects to the array
+//add several pokemon objects to an array
 pokemonList = [
     {name: 'Bulbasaur', height: 2.2, type: ['grass', 'poison']},
     {name: 'Ivysaur', height: 3.3, type: ['grass', 'poison']},
-    {name: 'Venusaur ', height: 6.7, type: ['grass', 'poison']}
+    {name: 'Venusaur', height: 6.7, type: ['grass', 'poison']}
 ];
 
-//create a for loop to iterate over objects in pokemonList
-//include conditional to add emphasis on tall pokemon
-for (let i = 0; i < pokemonList.length; i++) {
-    if (pokemonList[i].height >= 4) {
-        document.write('<p>' + pokemonList[i].name + ', height:' + pokemonList[i].height + ' - whoa there!' + '</p>');
+//print pokemonList array items to document
+//add emphasis to extra tall pokemon
+pokemonList.forEach( function getPokemonList(item){
+    if ( item.height >= 4) {
+        document.write('<p>' + item.name + ', height: ' + item.height + ' - whoa there!' + '</p>');
     } else { 
-        document.write('<p>' + pokemonList[i].name + ', height:' + pokemonList[i].height + '</p>');
+        document.write('<p>' + item.name + ', height: ' + item.height + '</p>');
     }
-}
+})
