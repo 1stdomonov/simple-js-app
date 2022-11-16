@@ -7,10 +7,13 @@ pokemonList = [
 ];
 
 function add(pokemon) {
-    pokemonList.push(pokemon);
-  } 
-
-
+    if (typeof pokemon === "object") {
+      pokemonList.push(pokemon);
+    } else {
+      console.log("Only Pokemon Objects Allowed!");
+    } 
+  }
+  
   function getAll() {
     return pokemonList;
   }
