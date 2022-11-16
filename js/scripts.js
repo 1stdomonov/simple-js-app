@@ -8,7 +8,8 @@ pokemonList = [
 
 function add(pokemon) {
     pokemonList.push(pokemon);
-  }
+  } 
+
 
   function getAll() {
     return pokemonList;
@@ -22,7 +23,7 @@ function add(pokemon) {
 
 //print pokemonList array items to document
 //add emphasis to extra tall pokemon
-pokemonRepository.getAll().forEach( function getPokemonList(item){
+pokemonRepository.getAll().forEach( function (item) {
     if ( item.height >= 4) {
         document.write('<p>' + item.name + ', height: ' + item.height + ' - whoa there!' + '</p>');
     } else { 
