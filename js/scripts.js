@@ -17,19 +17,24 @@ function add(pokemon) {
   function getAll() {
     return pokemonList;
   }
+function addListItem(){
 
+}
   return {
     add: add,
-    getAll: getAll
+    getAll: getAll,
+    addListItem: addListItem
   };
 })();
 
 //print pokemonList array items to document
 //add emphasis to extra tall pokemon
-pokemonRepository.getAll().forEach( function (item) {
-    if ( item.height >= 4) {
-        document.write('<p>' + item.name + ', height: ' + item.height + ' - whoa there!' + '</p>');
-    } else { 
-        document.write('<p>' + item.name + ', height: ' + item.height + '</p>');
-    }
-})
+pokemonRepository.getAll().forEach( function (pokemon) {
+    let pokemonList = domcument.querySelector ('.pokeList');
+    let listpokemon = document.createElement('li');
+    let button = document.createElement('button');
+    button.innerText = 'pokemon.name';
+    button.classList.add('button-class') //css selector, add styling code
+    listpokemon.appendChild(button);
+    pokemonList.appendChild(listpokemon);
+});
