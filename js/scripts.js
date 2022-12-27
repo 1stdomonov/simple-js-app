@@ -17,24 +17,21 @@ function add(pokemon) {
   function getAll() {
     return pokemonList;
   }
-function addListItem(){
 
-}
   return {
     add: add,
-    getAll: getAll,
-    addListItem: addListItem
+    getAll: getAll
   };
 })();
 
 //print pokemonList array items to document
-//add emphasis to extra tall pokemon
+
 pokemonRepository.getAll().forEach( function (pokemon) {
-    let pokemonList = domcument.querySelector ('.pokeList');
+    let pokemonList = document.querySelector('.poke-list');
     let listpokemon = document.createElement('li');
     let button = document.createElement('button');
-    button.innerText = 'pokemon.name';
-    button.classList.add('button-class') //css selector, add styling code
+    button.innerText = pokemon.name;
+    button.classList.add('button-class') //css
     listpokemon.appendChild(button);
     pokemonList.appendChild(listpokemon);
 });
