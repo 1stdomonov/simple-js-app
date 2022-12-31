@@ -15,3 +15,11 @@
     color: black;
     border: 2px solid #b13838;
   }
+
+  @media screen and (max-width: 600px){
+    .button-class {
+        width: auto;
+    }
+  }
+    
+  
