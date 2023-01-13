@@ -83,8 +83,8 @@ function showDetails(pokemon) {
 
     let imageElement = document.createElement("img");
     imageElement.setAttribute("src", img);
-    imageElement.setAttribute("width", "304");
-    imageElement.setAttribute("height", "228");
+    imageElement.setAttribute("width", "204");
+    imageElement.setAttribute("height", "128");
     imageElement.setAttribute("alt", "Pokemon Image");
 
     modal.appendChild(closeButtonElement);
