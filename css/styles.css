@@ -61,6 +61,21 @@
   .modal p {
     margin-bottom: 0;
   }
+
+  .modal img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .modal-close {
+    float: right;
+    appearance: auto;
+    border: 0;
+    background: none;
+    color: #777;
+    text-decoration: underline;
+  }
   
   #modal-container {
     display: none;
