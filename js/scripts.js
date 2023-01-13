@@ -60,10 +60,13 @@ function loadDetails(item) {
 
 function showDetails(pokemon) {
   loadDetails(pokemon).then(function () {
-    let modalContainer = document.querySelector('#modal-container');
+
+  let modalContainer = document.querySelector('#modal-container');
   
-  function showModal(title, text) {
+  function showModal(title, text, img) {
+    //clear any html from container
     modalContainer.innerHTML = '';
+
     let modal = document.createElement('div');
     modal.classList.add('modal');
 
@@ -78,13 +81,21 @@ function showDetails(pokemon) {
     let contentElement = document.createElement('p');
     contentElement.innerText = text;
 
+    let imageElement = document.createElement("img");
+    imageElement.setAttribute("src", img);
+    imageElement.setAttribute("width", "304");
+    imageElement.setAttribute("height", "228");
+    imageElement.setAttribute("alt", "Pokemon Image");
+
     modal.appendChild(closeButtonElement);
     modal.appendChild(titleElement);
     modal.appendChild(contentElement);
+    modal.appendChild(imageElement);
     modalContainer.appendChild(modal);
     
     modalContainer.classList.add('is-visible');
   }
+
 
   function hideModal() {
     modalContainer.classList.remove('is-visible');
@@ -97,8 +108,6 @@ function showDetails(pokemon) {
   });
   
   modalContainer.addEventListener('click', (e) => {
-    // Since this is also triggered when clicking INSIDE the modal
-    // We only want to close if the user clicks directly on the overlay
     let target = e.target;
     if (target === modalContainer) {
       hideModal();
@@ -106,7 +115,7 @@ function showDetails(pokemon) {
   });
 
   document.querySelector('.button-class').addEventListener('click', () => {
-    showModal(pokemon.name, pokemon.height);
+    showModal(pokemon.name, "Height:  " + pokemon.height, pokemon.imageUrl);
   });
 });
 }
@@ -117,7 +126,6 @@ function showDetails(pokemon) {
     addListItem: addListItem,
     loadList: loadList,
     loadDetails: loadDetails,
-    showDetails: showDetails
   };
 })();
 
