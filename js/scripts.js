@@ -23,6 +23,8 @@ let pokemonRepository = (function () {
     button.innerText = pokemon.name;
     listpokemon.classList.add('group-list-item')
     button.classList.add('btn', 'btn-primary'); 
+    button.setAttribute('data-toggle', 'modal');//is this correct?
+    button.setAttribute('data-target', '#exampleModal')
     listpokemon.appendChild(button); 
     pokemonList.appendChild(listpokemon);
     button.addEventListener('click', (event) => showDetails(pokemon));
@@ -51,7 +53,8 @@ let pokemonRepository = (function () {
       return response.json();
     }).then(function (details) {
       // Now we add the details to the item
-      item.imageUrl = details.sprites.front_default;
+      item.imageUrlFront = details.sprites.front_default;//change back?
+      item.imageUrlBack = details.sprites.back_default;//??
       item.height = details.height;
       item.types = details.types;
     }).catch(function (e) {
@@ -61,11 +64,11 @@ let pokemonRepository = (function () {
 
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
-      showModal(pokemon.name, "Height:  " + pokemon.height, pokemon.imageUrl);
+      showModal(pokemon);
     })
   }
 
-  showModal(pokemon) {
+  function showModal(pokemon) {
     let modalBody = $('.modal-body');
     let modalTitle = $('.modal-title');
     let modalHeader = $('.modal-header');
@@ -87,7 +90,6 @@ let pokemonRepository = (function () {
     modalBody.append(pokemonImageBack);
     modalBody.append(pokemonHeight);
     modalBody.append(pokemonType);
-
   }
 
   return { 
@@ -96,6 +98,7 @@ let pokemonRepository = (function () {
     addListItem: addListItem,
     loadList: loadList,
     loadDetails: loadDetails,
+    showModal: showModal
   };
 })();
 
