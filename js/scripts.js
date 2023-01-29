@@ -65,9 +65,32 @@ let pokemonRepository = (function () {
     })
   }
 
-  
+  showModal(pokemon) {
+    let modalBody = $('.modal-body');
+    let modalTitle = $('.modal-title');
+    let modalHeader = $('.modal-header');
 
-  return {
+    modalTitle.empty();
+    modalBody.empty();
+
+
+    let pokemonName = $('<h1>' + pokemon.name + '</h1>');
+    let pokemonImageFront = $('<img class="modal-img" style="width:50%">');
+    pokemonImageFront.attr('src', pokemon.imageUrlFront);
+    let pokemonImageBack = $('<img class="modal-img" style="width:50%">');
+    pokemonImageBack.attr('src', pokemon.imageUrlBack);
+    let pokemonHeight = $('<p>' + 'height : ' + pokemon.height + '</p>');
+    let pokemonType = $('<p>' + 'types : ' + pokemon.types + '</p>');
+
+    modalTitle.append(pokemonName);
+    modalBody.append(pokemonImageFront);
+    modalBody.append(pokemonImageBack);
+    modalBody.append(pokemonHeight);
+    modalBody.append(pokemonType);
+
+  }
+
+  return { 
     add: add,
     getAll: getAll,
     addListItem: addListItem,
