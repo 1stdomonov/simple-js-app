@@ -53,8 +53,7 @@ let pokemonRepository = (function () {
       return response.json();
     }).then(function (details) {
       // Now we add the details to the item
-      item.imageUrlFront = details.sprites.front_default;//change back?
-      item.imageUrlBack = details.sprites.back_default;//??
+      item.imageUrl = details.sprites.front_default;
       item.height = details.height;
       item.types = details.types;
     }).catch(function (e) {
@@ -71,17 +70,15 @@ let pokemonRepository = (function () {
   function showModal(pokemon) {
     let modalBody = $('.modal-body');
     let modalTitle = $('.modal-title');
-    let modalHeader = $('.modal-header');
+    
 
     modalTitle.empty();
     modalBody.empty();
 
 
     let pokemonName = $('<h1>' + pokemon.name + '</h1>');
-    let pokemonImageFront = $('<img class="modal-img" style="width:50%">');
-    pokemonImageFront.attr('src', pokemon.imageUrlFront);
-    let pokemonImageBack = $('<img class="modal-img" style="width:50%">');
-    pokemonImageBack.attr('src', pokemon.imageUrlBack);
+    let pokemonImage = $('<img class="modal-img" style="width:50%">');
+    pokemonImage.attr('src', pokemon.imageUrl);
     let pokemonHeight = $('<p>' + 'height : ' + pokemon.height + '</p>');
     let pokemonType = $('<p>' + 'types : ' + pokemon.types + '</p>');
 
