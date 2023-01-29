@@ -19,11 +19,11 @@ let pokemonRepository = (function () {
   function addListItem(pokemon){
     let pokemonList = document.querySelector('.list-group');
     let listpokemon = document.createElement('li');
-    let button = document.createElement('button'); //still needed?
+    let button = document.createElement('button');
     button.innerText = pokemon.name;
     listpokemon.classList.add('group-list-item')
-    button.classList.add('button-class'); //bootstrap
-    listpokemon.appendChild(button); //do I need this anymore?
+    button.classList.add('btn', 'btn-primary'); 
+    listpokemon.appendChild(button); 
     pokemonList.appendChild(listpokemon);
     button.addEventListener('click', (event) => showDetails(pokemon));
   }
