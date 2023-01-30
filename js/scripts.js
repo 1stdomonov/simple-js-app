@@ -80,11 +80,10 @@ let pokemonRepository = (function () {
     let pokemonImage = $('<img class="modal-img" style="width:50%">');
     pokemonImage.attr('src', pokemon.imageUrl);
     let pokemonHeight = $('<p>' + 'height : ' + pokemon.height + '</p>');
-    let pokemonType = $('<p>' + 'types : ' + pokemon.types + '</p>');
+    let pokemonType = $('<p>' + 'types : ' + pokemon.types.map(({type}) => type.name).join(', ') + '</p>');
 
     modalTitle.append(pokemonName);
-    modalBody.append(pokemonImageFront);
-    modalBody.append(pokemonImageBack);
+    modalBody.append(pokemonImage);
     modalBody.append(pokemonHeight);
     modalBody.append(pokemonType);
   }
