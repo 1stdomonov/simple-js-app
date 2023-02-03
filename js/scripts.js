@@ -21,7 +21,8 @@ let pokemonRepository = (function () {
     let listpokemon = document.createElement('li');
     let button = document.createElement('button');
     button.innerText = pokemon.name;
-    listpokemon.classList.add('group-list-item')
+    listpokemon.classList.add('group-list-item');
+    listpokemon.classList.add('col');
     button.classList.add('btn', 'btn-primary'); 
     button.setAttribute('data-toggle', 'modal');//is this correct?
     button.setAttribute('data-target', '#exampleModal')
