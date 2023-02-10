@@ -22,8 +22,8 @@ let pokemonRepository = (function () {
     let button = document.createElement('button');
     button.innerText = pokemon.name;
     listpokemon.classList.add('group-list-item');
-    listpokemon.classList.add('col');
-    button.classList.add('btn', 'btn-primary'); 
+    
+    button.classList.add('btn', 'btn-primary', 'col-lg-6', 'poke-btn'); 
     button.setAttribute('data-toggle', 'modal');//is this correct?
     button.setAttribute('data-target', '#exampleModal')
     listpokemon.appendChild(button); 
@@ -67,6 +67,9 @@ let pokemonRepository = (function () {
       showModal(pokemon);
     })
   }
+
+//search button functionality --> show pokemon modal on search???
+
 
   function showModal(pokemon) {
     let modalBody = $('.modal-body');

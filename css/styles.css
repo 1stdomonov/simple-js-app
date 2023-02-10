@@ -3,7 +3,32 @@
   background-color: #e9e9e9;
 }
 
-.page-container {
-    margin-top: 70px;
+.container-fluid {
+    margin-top: 105px;
 }
 
+
+.row {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.poke-btn {
+    padding: 30px;
+    border: 5px solid black;
+    font-weight: bold; 
+    background-color: red;
+    border-radius: 55%;
+    margin: 20px;
+    width: 220px;
+    text-align: center;
+}
+    
