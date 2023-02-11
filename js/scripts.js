@@ -24,7 +24,7 @@ let pokemonRepository = (function () {
     listpokemon.classList.add('group-list-item');
     
     button.classList.add('btn', 'btn-primary', 'col-lg-6', 'poke-btn'); 
-    button.setAttribute('data-toggle', 'modal');//is this correct?
+    button.setAttribute('data-toggle', 'modal');
     button.setAttribute('data-target', '#exampleModal')
     listpokemon.appendChild(button); 
     pokemonList.appendChild(listpokemon);
@@ -68,8 +68,21 @@ let pokemonRepository = (function () {
     })
   }
 
-//search button functionality --> show pokemon modal on search???
-
+//search button functionality
+function search_pokemon() {
+  let input = document.getElementById('searchbar').value
+  input=input.toLowerCase();
+  let x = document.getElementsByClassName('group-list-item');
+    
+  for (i = 0; i < x.length; i++) { 
+      if (!x[i].innerHTML.toLowerCase().includes(input)) {
+          x[i].style.display="none";
+      }
+      else {
+          x[i].style.display="group-list-item";                 
+      }
+  };
+};
 
   function showModal(pokemon) {
     let modalBody = $('.modal-body');
@@ -98,7 +111,8 @@ let pokemonRepository = (function () {
     addListItem: addListItem,
     loadList: loadList,
     loadDetails: loadDetails,
-    showModal: showModal
+    showModal: showModal,
+    search_pokemon: search_pokemon
   };
 })();
 
