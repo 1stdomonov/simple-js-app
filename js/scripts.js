@@ -69,20 +69,29 @@ let pokemonRepository = (function () {
   }
 
 //search button functionality
-function search_pokemon() {
-  let input = document.getElementById('searchbar').value
-  input=input.toLowerCase();
-  let x = document.getElementsByClassName('group-list-item');
-    
-  for (i = 0; i < x.length; i++) { 
-      if (!x[i].innerHTML.toLowerCase().includes(input)) {
-          x[i].style.display="none";
-      }
-      else {
-          x[i].style.display="group-list-item";                 
-      }
-  };
-};
+$(document).ready(function() {
+  $('#searchbar').on('keyup', function() {
+  
+  let input, filter, ul, li, btn, i, txtValue;
+
+  input = document.getElementById('searchbar');
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myUl");
+  li = document.getElementsByTagName('li');
+
+  // Loop through all list items, and hide those who don't match the search query
+  for (i = 0; i < li.length; i++) {
+    btn = li[i].getElementsByTagName("button")[0];
+    txtValue = btn.textContent || btn.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+  });
+});
+  
 
   function showModal(pokemon) {
     let modalBody = $('.modal-body');
@@ -111,8 +120,7 @@ function search_pokemon() {
     addListItem: addListItem,
     loadList: loadList,
     loadDetails: loadDetails,
-    showModal: showModal,
-    search_pokemon: search_pokemon
+    showModal: showModal
   };
 })();
 
