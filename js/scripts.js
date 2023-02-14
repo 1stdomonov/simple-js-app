@@ -28,7 +28,7 @@ let pokemonRepository = (function () {
     button.setAttribute('data-target', '#exampleModal');
     listpokemon.appendChild(button);
     pokemonList.appendChild(listpokemon);
-    button.addEventListener('click', (event) => showDetails(pokemon));
+    button.addEventListener('click', () => showDetails(pokemon));
   }
 
   function loadList() {
