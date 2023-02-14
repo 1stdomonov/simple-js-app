@@ -1,8 +1,10 @@
 # simple-js-app
-Pokedex Project in dev
 
-using: 
+Simple Pokedex App
+load, display, and search pokemon
 
-visual code studio
-pokedex.org
-github desktot/github
+App made with:
+
+pokeapi
+vs code studio
+HTML, JS, CSS, and Jquery
