@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 //wrap pokemonList array in IIFE and assign to repo variable
 let pokemonRepository = (function () {
   let pokemonList = [];
@@ -58,7 +59,6 @@ let pokemonRepository = (function () {
         return response.json();
       })
       .then(function (details) {
-        // Now we add the details to the item
         item.imageUrl = details.sprites.front_default;
         item.height = details.height;
         item.types = details.types;
@@ -77,11 +77,10 @@ let pokemonRepository = (function () {
   //search button functionality
   $(document).ready(function () {
     $('#searchbar').on('keyup', function () {
-      let input, filter, ul, li, btn, i, txtValue;
+      let input, filter, li, btn, i, txtValue;
 
       input = document.getElementById('searchbar');
       filter = input.value.toUpperCase();
-      ul = document.getElementById('myUl');
       li = document.getElementsByTagName('li');
 
       // Loop through all list items, and hide those who don't match the search query
